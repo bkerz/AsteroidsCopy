@@ -26,9 +26,20 @@ func _process(delta):
 	if Input.is_action_pressed("move_up"):
 		var rotation = rotation_degrees * (PI / 180)
 		move_and_slide(Vector2(sin(rotation) * force, -1 * cos(rotation) * force), Vector2(0, 0))
+	
+	should_show_fire()
+	
 
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+
+func should_show_fire() -> void:
+	if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right") || Input.is_action_pressed("move_up"):
+		$Fire.visible = true
+		return
+	else:
+		$Fire.visible = false
+		
 
 func shoot():
 	emit_signal("player_shoot")
