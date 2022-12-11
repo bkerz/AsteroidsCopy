@@ -43,6 +43,10 @@ func should_show_fire() -> void:
 
 func shoot():
 	emit_signal("player_shoot")
+	
+func _on_Area2D_body_entered(body):
+	if body.get_groups().has("Asteroid"):
+		queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
