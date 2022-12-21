@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://fire.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void vertex(){
+	VERTEX.y += VERTEX.y + 13.0;
+	VERTEX.y += sin(TIME * UV.y * 25.0) * 5.0;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -22,7 +33,7 @@ scale = Vector2( 1, 2.15923 )
 polygon = PoolVector2Array( -1, -15.5388, -12, -6.73939, -13, -1.64499, -21, 2.52315, -21, 11.7857, -12, 8.08068, -12, 13.6382, 10, 13.6382, 10, 8.08068, 19, 11.7857, 19, 2.52315, 11, -1.64499, 10, -6.73939 )
 
 [node name="Fire" type="Sprite" parent="."]
-visible = false
+material = SubResource( 2 )
 position = Vector2( 0, 40 )
 texture = ExtResource( 3 )
 
