@@ -7,9 +7,15 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
-void vertex(){
-	VERTEX.y += VERTEX.y + 13.0;
-	VERTEX.y += sin(TIME * UV.y * 25.0) * 5.0;
+void vertex() {
+	//strech vertically
+    VERTEX.y *= 2.0;
+	
+	//move a little bit to the bottom to adjust position of the texture
+    VERTEX.y += 10.0;
+	
+	//contract and stretch vertically
+    VERTEX.y += sin(TIME * UV.y * 20.0) * 2.0;
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
