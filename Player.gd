@@ -5,7 +5,7 @@ signal player_shoot
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+export(PackedScene) var explosion_scene
 export var force:float
 export var rotation_velocity:float
 
@@ -46,7 +46,14 @@ func shoot():
 	
 func _on_Area2D_body_entered(body):
 	if body.get_groups().has("Asteroid"):
+		var explosion = explosion_scene.instance()
+		explosion.position = position
+		explosion.one_shot = true
+		explosion.emitting = true
+		get_tree().current_scene.add_child(explosion)
 		queue_free()
+		print("Explosion")
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
