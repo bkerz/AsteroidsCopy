@@ -34,4 +34,10 @@ func _on_Timer_timeout():
 
 	asteroid.linear_velocity = velocity.rotated(direction)
 
+	asteroid.connect("add_point", self, "on_add_point")
+
 	add_child(asteroid)
+
+func on_add_point():
+	var new_points := int($Label.text) + 1
+	$Label.text = String(new_points)
