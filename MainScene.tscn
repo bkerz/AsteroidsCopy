@@ -34,5 +34,14 @@ texture = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 300 )
 
+[node name="Label" type="Label" parent="."]
+margin_left = 963.0
+margin_top = 5.0
+margin_right = 991.0
+margin_bottom = 19.0
+rect_scale = Vector2( 2, 2 )
+text = "2411"
+align = 2
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="player_shoot" from="Player" to="." method="_on_Player_player_shoot"]
