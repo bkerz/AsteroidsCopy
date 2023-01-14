@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal add_point
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -28,8 +29,9 @@ func _on_Area2D_area_entered(area):
 		explosion.position = position
 		explosion.one_shot = true
 		explosion.emitting = true
+		emit_signal("add_point")
 		get_tree().current_scene.add_child(explosion)
-		queue_free()
+	queue_free()
 
 	pass # Replace with function body.
 	
