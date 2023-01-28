@@ -19,3 +19,8 @@ func _ready():
 func _on_Start_pressed():
 	get_tree().change_scene("res://MainScene.tscn")
 	pass # Replace with function body.
+
+
+func _on_Exit_pressed():
+	get_tree().quit()
+	pass # Replace with function body.

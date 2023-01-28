@@ -42,3 +42,4 @@ custom_fonts/font = SubResource( 2 )
 text = "Exit"
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
