@@ -51,8 +51,7 @@ func _on_Area2D_body_entered(body):
 		explosion.one_shot = true
 		explosion.emitting = true
 		get_tree().current_scene.add_child(explosion)
-		queue_free()
-		print("Explosion")
+		get_tree().change_scene("res://MainMenu.tscn")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
