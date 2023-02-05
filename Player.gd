@@ -1,5 +1,6 @@
 extends KinematicBody2D
 signal player_shoot
+signal player_dead
 
 
 # Declare member variables here. Examples:
@@ -50,8 +51,8 @@ func _on_Area2D_body_entered(body):
 		explosion.position = position
 		explosion.one_shot = true
 		explosion.emitting = true
-		get_tree().current_scene.add_child(explosion)
-		get_tree().change_scene("res://MainMenu.tscn")
+		emit_signal("player_dead")
+		queue_free()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
