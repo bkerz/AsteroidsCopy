@@ -40,3 +40,9 @@ func _on_Timer_timeout():
 func on_add_point():
 	var new_points := int($Label.text) + 1
 	$Label.text = String(new_points)
+
+
+func _on_Player_player_dead():
+	var popup_instance = dead_popup.instance()
+	add_child(popup_instance)
+	pass # Replace with function body.

@@ -46,4 +46,5 @@ text = "0"
 align = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="player_dead" from="Player" to="." method="_on_Player_player_dead"]
 [connection signal="player_shoot" from="Player" to="." method="_on_Player_player_shoot"]
