@@ -1,8 +1,7 @@
 extends Node2D
 export(PackedScene) var projectile_scene
-
-
 export(PackedScene) var asteroid_scene
+export(PackedScene) var dead_popup
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
