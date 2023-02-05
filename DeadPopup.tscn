@@ -52,3 +52,4 @@ custom_fonts/font = SubResource( 3 )
 text = "Exit"
 
 [connection signal="pressed" from="DeadPopop/Label/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="DeadPopop/Label/Exit" to="." method="_on_Exit_pressed"]
