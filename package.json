@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "0.7.0",
+  "description": "A simple copy of Asteroids for practicing godot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZambranoBeicker/AsteroidsCopy.git"
+  },
+  "author": "Beicker Zambrano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZambranoBeicker/AsteroidsCopy/issues"
+  },
+  "homepage": "https://github.com/ZambranoBeicker/AsteroidsCopy#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "husky": "^8.0.3"
+  }
+}
