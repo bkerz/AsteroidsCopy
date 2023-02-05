@@ -5,3 +5,7 @@
 bin/
 build/
 lib/
+
+# tools
+node_modules/
+package-lock.json
